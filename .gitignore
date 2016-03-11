@@ -47,4 +47,4 @@ packages/
 *.secrets.config
 *.secret.config
 *.dll
-Web.secrets.*.config
+*.secrets.*.config
