@@ -1,0 +1,42 @@
+﻿<html>
+    <head>
+        <title>Guahtdim full info</title>
+    </head>
+    <body>
+        Some simple info:
+        <br/>
+		Last update: @Model.LastUpdatedDateTimeString <br/>
+		<br/>
+
+		@If.TempAndHumidityDataExists
+		Temperature: @Model.TemperatureAsString &deg;C<br/>
+		Humidity: @Model.HumidityAsString %<br/>
+		@EndIf
+		<br/>
+
+		@If.WaterlevelDataExists
+   
+
+        Waterlevels:
+        <br/>
+       Reservoir empty: @Model.ReservoirEmpty<br/>
+	   GrowPool empty: @Model.GrowPoolEmpty<br/>
+	   GrowPool full: @Model.GrowPoolFull<br/>
+		@EndIf	   
+	
+		
+	   <br/>
+	   @If.HeaterDataExists
+	   Heater on: @Model.HeaterOn <br/>
+	   @EndIf
+	   <br/>
+	   <br/>
+
+	   @If.PumpDataExists
+	   Pump on: @Model.IsPumping<br/>
+	   Last time pump on: @Model.LastPumpOnDateTimeString<br/>
+	   Last timespan pumped: @Model.PumpRunTimeString <br/>
+	   @EndIf
+    </body>
+
+</html>

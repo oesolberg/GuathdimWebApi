@@ -123,6 +123,10 @@
     <Compile Include="Waterlevels\WaterlevelDataSaver.cs" />
     <Compile Include="Waterlevels\WaterlevelModule.cs" />
     <Compile Include="Waterlevels\WaterLevelData.cs" />
+    <Compile Include="WebGui\DapperFullInfo.cs" />
+    <Compile Include="WebGui\GuahtdimFullInfoModel.cs" />
+    <Compile Include="WebGui\PumpTimeData.cs" />
+    <Compile Include="WebGui\WebGui.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -140,6 +144,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebGui\fullInfo.sshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
