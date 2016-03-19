@@ -2,6 +2,7 @@
 using Nancy;
 using Nancy.Authentication.Stateless;
 using Nancy.Bootstrapper;
+using Nancy.Conventions;
 using Nancy.TinyIoc;
 
 namespace GuahtdimWebApi
@@ -49,5 +50,22 @@ namespace GuahtdimWebApi
 			//        null;
 			//};
 		}
-	}
+
+        protected override void ConfigureConventions(NancyConventions conventions)
+        {
+            
+
+            var allowedScriptFiletypes = new string[] {"js"};
+            var allowedHighchartFiletypes = new string[] {"htm"};
+
+            conventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("scripts", @"scripts",allowedScriptFiletypes)
+            );
+            conventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("highcharts", @"highcharts",allowedHighchartFiletypes)
+            );
+
+            base.ConfigureConventions(conventions);
+        }
+    }
 }
